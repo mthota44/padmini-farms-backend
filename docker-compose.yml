@@ -1,0 +1,33 @@
+version: "3.9"
+
+networks:
+  padmini-net:
+    driver: bridge
+
+services:
+  # 🧩 1. CONFIG SERVER
+  config-server:
+    image: padmini/config-server:0.0.1
+    container_name: padmini_config
+    restart: always
+    ports:
+      - "8888:8888"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    networks:
+      - padmini-net
+
+  # 🧱 2. DISCOVERY SERVER (Eureka)
+  discovery-server:
+    image: padmini/discovery-server:0.0.1
+    container_name: padmini_discovery
+    restart: always
+    depends_on:
+      - config-server
+    ports:
+      - "8761:8761"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
+    networks:
+      - padmini-net

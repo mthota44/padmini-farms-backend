@@ -34,3 +34,6 @@ build/
 
 ### Intellig
 .idea/
+
+###git config credentials###
+.env/
