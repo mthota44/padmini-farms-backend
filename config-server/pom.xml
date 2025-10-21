@@ -50,11 +50,23 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <version>3.4.2</version>
                 <configuration>
+                    <from>
+                        <!-- Use Java 21 runtime to match your build -->
+                        <image>eclipse-temurin:21-jre-alpine</image>
+                    </from>
                     <to>
-                        <image>padmini/${project.artifactId}:0.0.1</image>
+                        <image>padmini/config-server:0.0.1</image>
                     </to>
+                    <container>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                        <mainClass>com.padmini.discoveryserver.configserver.ConfigServerApplication</mainClass>
+                        <ports>
+                            <port>8888</port>
+                        </ports>
+                    </container>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
