@@ -31,9 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### Intellig
-.idea/
-
-###git config credentials###
-.env
