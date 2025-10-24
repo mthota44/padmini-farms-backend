@@ -31,6 +31,7 @@ public class AuthService {
     private String clientSecret;
 
     public Mono<RegisterResponse> register(RegisterRequest req) {
+        System.out.println("hii:" + "hii");
         return adminClient.registerUser(req);
     }
 

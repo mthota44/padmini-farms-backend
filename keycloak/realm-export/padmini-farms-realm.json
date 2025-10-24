@@ -40,7 +40,9 @@
       "firstName": "Super",
       "lastName": "Admin",
       "email": "admin@padminifarms.com",
-      "credentials": [ { "type": "password", "value": "admin", "temporary": false } ],
+      "credentials": [
+        { "type": "password", "value": "admin", "temporary": false }
+      ],
       "realmRoles": [ "ADMIN" ]
     },
     {
@@ -48,7 +50,9 @@
       "enabled": true,
       "emailVerified": true,
       "email": "seller@padminifarms.com",
-      "credentials": [ { "type": "password", "value": "seller", "temporary": false } ],
+      "credentials": [
+        { "type": "password", "value": "seller", "temporary": false }
+      ],
       "realmRoles": [ "SELLER" ]
     },
     {
@@ -56,25 +60,10 @@
       "enabled": true,
       "emailVerified": true,
       "email": "buyer@padminifarms.com",
-      "credentials": [ { "type": "password", "value": "buyer", "temporary": false } ],
+      "credentials": [
+        { "type": "password", "value": "buyer", "temporary": false }
+      ],
       "realmRoles": [ "BUYER" ]
-    }
-  ],
-  "identityProviders": [
-    {
-      "providerId": "google",
-      "alias": "google",
-      "displayName": "Google",
-      "enabled": true,
-      "trustEmail": true,
-      "storeToken": true,
-      "firstBrokerLoginFlowAlias": "first broker login",
-      "config": {
-        "clientId": "REPLACE_WITH_GOOGLE_CLIENT_ID",
-        "clientSecret": "REPLACE_WITH_GOOGLE_CLIENT_SECRET",
-        "defaultScope": "openid profile email",
-        "prompt": "consent"
-      }
     }
   ]
 }

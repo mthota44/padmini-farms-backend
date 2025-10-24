@@ -33,7 +33,7 @@ services:
   # KEYCLOAK (with auto-realm import)
   keycloak:
     image: quay.io/keycloak/keycloak:24.0
-    container_name: padmini_keycloak     # optional; service name is keycloak (use service name in configs)
+    container_name: keycloak     # service name is keycloak (use service name in configs)
     command: start-dev --import-realm --http-port=8090
     environment:
       - KEYCLOAK_ADMIN=admin

@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class WebClientConfig {
 
-    @Value("${keycloak.base-url:http://padmini-keycloak:8090}")
+    @Value("${keycloak.base-url:http://keycloak:8090}")
     private String keycloakBaseUrl;
 
     @Bean

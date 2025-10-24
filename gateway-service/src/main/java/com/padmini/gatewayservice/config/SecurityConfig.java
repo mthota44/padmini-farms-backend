@@ -20,7 +20,7 @@ public class SecurityConfig {
 
                 // Authorization configuration
                 .authorizeExchange(auth -> auth
-                        .pathMatchers("/actuator/**", "/.well-known/**", "/oauth2/**").permitAll()
+                        .pathMatchers("/actuator/**", "/.well-known/**", "/oauth2/**","/auth/**").permitAll()
                         .anyExchange().authenticated()
                 )
 
@@ -35,7 +35,7 @@ public class SecurityConfig {
 
     @Bean
     public ReactiveJwtDecoder jwtDecoder() {
-        String jwkSetUri = "http://padmini-keycloak:8090/realms/padmini-farms/protocol/openid-connect/certs";
+        String jwkSetUri = "http://keycloak:8090/realms/padmini-farms/protocol/openid-connect/certs";
         return NimbusReactiveJwtDecoder.withJwkSetUri(jwkSetUri).build();
     }
 }
